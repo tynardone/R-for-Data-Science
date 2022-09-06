@@ -2,7 +2,9 @@
 title: "R for data science notes"
 author: "Tyler Nardone"
 date: '2022-09-06'
-output: rmarkdown::github_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
