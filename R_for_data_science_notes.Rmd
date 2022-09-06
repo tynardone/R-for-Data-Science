@@ -109,16 +109,20 @@ These rules are interrelated in that you can't satisfy 2 without satisfying the 
 </ol>
 ### Longer
 Sometimes column names are not variable names but values of a variable.
+<image src="https://d33wubrfki0l68.cloudfront.net/3aea19108d39606bbe49981acda07696c0c7fcd8/2de65/images/tidy-9.png">
 ```{r}
-table4a
-```
-This dataset needs to be pivoted
-```{r}
+library(tidyverse)
+table4a 
 table4a %>% pivot_longer(c('1999', '2000'), names_to = "year", values_to = "cases")
 ```
 
-`pivot_longer()`
-`pivot_wider()`
+### Wider 
+<image src="https://d33wubrfki0l68.cloudfront.net/8350f0dda414629b9d6c354f87acf5c5f722be43/bcb84/images/tidy-8.png">
+```{r}
+library(tidyverse)
+table2
+table2 %>% pivot_wider(names_from = type, values_from = count)
+```
 
 ## relational data
 ## regular expressions

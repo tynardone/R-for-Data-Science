@@ -2,9 +2,9 @@
 library(tidyverse)
 library(modelr)
 
-table4a
 
+tibble(x = c("a,b,c", "d,e,f,g", "h,i,j")) %>% 
+  separate(x, c("one", "two", "three"))
 
-
-table4a %>% 
-  pivot_longer(c('1999', '2000'), names_to = "year", values_to = "cases")
+tibble(x = c("a,b,c", "d,e", "f,g,i")) %>% 
+  separate(x, c("one", "two", "three"))
