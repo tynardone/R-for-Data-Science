@@ -117,6 +117,7 @@ table4a %>% pivot_longer(c('1999', '2000'), names_to = "year", values_to = "case
 ```
 
 ### Wider 
+A single observation may be scattered across multiple rows. Below, each observation is a country in a certain year. 
 <image src="https://d33wubrfki0l68.cloudfront.net/8350f0dda414629b9d6c354f87acf5c5f722be43/bcb84/images/tidy-8.png">
 ```{r}
 library(tidyverse)
