@@ -1,19 +1,20 @@
 library(tidyverse)
 
+t2_cases <- filter(table2, type == 'cases') %>% 
+  rename(cases = count) %>% 
+  arrange(country, year)
 
-who_tidy <-  
-  who %>%
-  pivot_longer(
-    cols = new_sp_m014:newrel_f65, 
-    names_to = "key", 
-    values_to = "cases", 
-    values_drop_na = TRUE
-  ) %>% 
-  mutate(
-    key = stringr::str_replace(key, "newrel", "new_rel")
-  ) %>%
-  separate(key, c("new", "var", "sexage")) %>% 
-  select(-new, -iso2, -iso3) %>% 
-  separate(sexage, c("sex", "age"), sep = 1)
+t2_population <- filter(table2, type == 'population') %>% 
+  rename(population = count) %>% 
+  arrange(country, year)
 
-who_tidy
+t2_cases_per_table <- tibble(
+  year = t2_cases$year,
+  country = t2_cases$country,
+  cases = t2_cases$cases,
+  population = t2_population$population
+) %>% 
+  mutate(cases_per_cap = cases / population * 10000) %>% 
+  select(country, cases, cases_per_cap)
+
+t2_cases_per_table

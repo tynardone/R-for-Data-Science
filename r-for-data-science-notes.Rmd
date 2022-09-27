@@ -125,9 +125,27 @@ table2
 table2 %>% pivot_wider(names_from = type, values_from = count)
 ```
 
-## relational data
+### Separate
+  Sometimes a column may actually contain two values and you want to separate 
+  these into two variables. Pipe your tibble into separate.
+  Unite() is then these inverse operation, though this is used far less often than
+  separate().
+
+### Missing Values
+  There are two ways a value can be missing:
+    <ul>
+    <li> **Explicitly**, i.e. flagged as NA </li>
+    <li> **Implicitly**, i.e. just not present in the data </li>
+    </ul>
+  Zen: "An explicit missing value is the presence of an abscence, and implicit
+  missing value is the absences of presence".
+## Relational Data
+Primary Keys and Foreign Keys
+Joins
+<img src="https://d33wubrfki0l68.cloudfront.net/3abea0b730526c3f053a3838953c35a0ccbe8980/7f29b/diagrams/join-inner.png">
+<img src="https://d33wubrfki0l68.cloudfront.net/9c12ca9e12ed26a7c5d2aa08e36d2ac4fb593f1e/79980/diagrams/join-outer.png">
 ## regular expressions
 ## Factors
 Factors are used to represent categorical variables with a known set of possible values. 
-## Dates and times 
+## Dates and t    imes 
 
